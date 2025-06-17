@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: family  # 모든 run 명령이 이 폴더에서 실행됨
+        working-directory: family  # 모든 run 명령이 이 폴더(family)에서 실행됨
 
     steps:
       - name: Checkout repo
@@ -33,13 +33,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Next.js
+      - name: Build Next.js # next.config.js의 output: 'export' 설정에 따라 'out' 폴더가 'family/out' 경로에 생성됨
         run: npm run build
 
-      # - name: Export static files
-      #   run: npm run export
-
-      # ⚠️ 아래 두 스텝은 루트에서 실행되어야 하므로 working-directory 제거
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -48,9 +44,10 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Sync to S3
-        run: aws s3 sync ./family/out s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        # 'family/out'을 가리키는 부분
+        run: aws s3 sync ./out s3://${{ secrets.S3_BUCKET_NAME }} --delete
 
-      # CDN 사용하므로 캐싱 처리
+      # CloudFront 사용
       - name: Invalidate CloudFront cache
         if: success()
         run: |
