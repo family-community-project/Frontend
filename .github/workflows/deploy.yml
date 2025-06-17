@@ -36,8 +36,8 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
-      - name: Export static files
-        run: npm run export
+      # - name: Export static files
+      #   run: npm run export
 
       # ⚠️ 아래 두 스텝은 루트에서 실행되어야 하므로 working-directory 제거
       - name: Configure AWS credentials
