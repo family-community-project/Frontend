@@ -58,7 +58,7 @@
   border
   outline-none
   border-gray-500
-  rounded-[4px]
+  rounded-[100px]
   px-4
   text-gray-900
   text-[14px]
@@ -69,7 +69,7 @@
 
 .input-disabled {
   @apply bg-gray-200
-  rounded-[4px]
+  rounded-[100px]
   px-4
   font-sans
   text-[14px]
@@ -85,7 +85,7 @@
   pl-4
   pr-12
   border-gray-500
-  rounded-[4px]
+  rounded-[100px]
   text-gray-900
   text-[14px]
   font-sans
