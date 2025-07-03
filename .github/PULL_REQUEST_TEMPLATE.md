@@ -1,11 +1,3 @@
----
-name: "\U0001F4CB Pull-request Template"
-about: PR를 생성해주세요. ✏️
-title: ""
-labels: ""
-assignees: hyeok9912
----
-
 ## 🧩 이슈번호
 
 ## 📝 개요
