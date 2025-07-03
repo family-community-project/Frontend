@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 버튼 */
 .btn-default {
   @apply bg-green-500 
   flex
@@ -46,4 +47,71 @@
     active:bg-green-200 
     active:text-green-600
     active:font-semibold;
+}
+
+/* 인풋 */
+
+.input-daflult {
+  @apply bg-none
+  h-10
+  w-full
+  border
+  outline-none
+  border-gray-500
+  rounded-[4px]
+  px-4
+  text-gray-900
+  text-[14px]
+    font-normal
+  font-sans
+  focus:border-green-400;
+}
+
+.input-disabled {
+  @apply bg-gray-200
+  rounded-[4px]
+  px-4
+  font-sans
+  text-[14px]
+    font-normal
+  h-10
+  w-full;
+}
+.input-withtime {
+  @apply bg-none
+  h-10
+  border
+  outline-none
+  pl-4
+  pr-12
+  border-gray-500
+  rounded-[4px]
+  text-gray-900
+  text-[14px]
+  font-sans
+  w-full
+    font-normal
+  focus:border-green-400;
+}
+
+/* 라벨 */
+.label {
+  @apply text-[12px]
+  text-gray-500
+    font-normal;
+}
+
+/* 에러 메세지 */
+.errorMsg {
+  @apply text-system-red
+  text-[12px]
+    font-normal;
+}
+
+/* 타이머 */
+.timer {
+  @apply absolute
+    right-3
+    top-1/2
+    -translate-y-1/2 text-gray-500 text-[12px];
 }

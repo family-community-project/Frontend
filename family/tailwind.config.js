@@ -29,6 +29,9 @@ module.exports = {
           gray800: "#2A2A2A",
           gray900: "#111111",
         },
+        system: {
+          red: "#FF334B",
+        },
         defaultbtn: {
           default: "#3CAE6E",
           hover: "#369A62",
