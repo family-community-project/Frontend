@@ -3,7 +3,7 @@ name: Deploy ttasup-frontend to S3
 on:
   push:
     branches:
-      - main
+      - develop # 브랜치가 develop일 때 실행
 
 jobs:
   build-deploy:
@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: family  # 모든 run 명령이 이 폴더(family)에서 실행됨
+        working-directory: family # 모든 run 명령어가 family 폴더에서 실행
 
     steps:
       - name: Checkout repo
@@ -22,20 +22,30 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Cache Node.js modules
+      # 2. Yarn 캐시 디렉토리 경로 가져오기
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+
+      # 3. Yarn 캐시 설정
+      - name: Cache Yarn dependencies
         uses: actions/cache@v3
+        id: yarn-cache # `cache-hit` 여부를 확인하는데 사용 ==> if: steps.yarn-cache.outputs.cache-hit != 'true'
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-yarn-
 
+      # 4. Yarn을 사용하여 의존성 설치
       - name: Install dependencies
-        run: npm install
+        run: yarn install --frozen-lockfile
 
+      # 5. Next.js 프로젝트 빌드
       - name: Build Next.js # next.config.js의 output: 'export' 설정에 따라 'out' 폴더가 'family/out' 경로에 생성됨
-        run: npm run build
+        run: yarn build
 
+      # 6. AWS 자격 증명 설정 (Github Secret에 미리 설정해둠)
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -43,11 +53,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ap-northeast-2
 
+      # 7. S3 버킷과 동기화
       - name: Sync to S3
-        # 'family/out'을 가리키는 부분
+        # 'family/out' 폴더의 내용을 S3 버킷에 동기화하는 과정
         run: aws s3 sync ./out s3://${{ secrets.S3_BUCKET_NAME }} --delete
 
-      # CloudFront 사용
+      # 8. CloudFront 캐시 무효화 
       - name: Invalidate CloudFront cache
         if: success()
         run: |
