@@ -32,18 +32,9 @@ module.exports = {
         system: {
           red: "#FF334B",
         },
-        defaultbtn: {
-          default: "#3CAE6E",
-          hover: "#369A62",
-          pressed: "#32915C",
-          outlineDefault: "#F5F5F5",
-          outlineHover: "#EFEFEF",
-          outlinePressed: "#DFDFDF",
-          lineGray: "#949494",
-          ghostText: "#777777",
-          ghostHover: "#EFEFEF",
-          ghostTextHover: "#2A2A2A",
-          ghostPress: "#E3F6EB",
+        logo: "#26A17B",
+        kakao: {
+          container: "#FEE500",
         },
       },
     },

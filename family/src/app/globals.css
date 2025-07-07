@@ -4,12 +4,14 @@
 
 /* 버튼 */
 .btn-default {
-  @apply bg-green-500 
-  flex
+  @apply bg-green-500
+  flex  
+
   justify-center
   text-white
   rounded-[100px]
   px-4
+  w-full
   items-center
   font-normal
   font-sans 
@@ -21,6 +23,7 @@
     flex
   justify-center
   text-gray-900
+  w-full
   rounded-[100px]
   px-4
   items-center
@@ -36,6 +39,7 @@
   @apply bg-none
    flex
   justify-center
+  w-full
    text-gray-600
     rounded-[100px]
       items-center
@@ -47,6 +51,20 @@
     active:bg-green-200 
     active:text-green-600
     active:font-semibold;
+}
+
+.btn-kakao {
+  @apply bg-kakao-container
+  flex  
+
+  justify-center
+  text-black
+  rounded-[100px]
+  px-4
+  w-full
+  items-center
+  font-normal
+  font-sans;
 }
 
 /* 인풋 */
