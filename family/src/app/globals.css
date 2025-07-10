@@ -115,3 +115,20 @@
     top-1/2
     -translate-y-1/2 text-gray-500 text-[12px];
 }
+
+/* 드롭다운 */
+.option {
+  @apply bg-none flex
+  flex-col
+  justify-center
+  items-center
+  text-gray-500
+  text-[12px]/[12px]
+  rounded-[100px]
+  h-[32px]
+  w-full
+  px-[16px]
+  hover:bg-green-100
+  hover:text-green-500
+  /* pr-[12px] */;
+}
