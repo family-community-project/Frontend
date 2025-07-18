@@ -1,117 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* 버튼 */
-.btn-default {
-  @apply bg-green-500 
-  flex
-  justify-center
-  text-white
-  rounded-[100px]
-  px-4
-  items-center
-  font-normal
-  font-sans 
-  hover:bg-green-600
-  active:bg-green-700;
-}
-.btn-outline {
-  @apply bg-none
-    flex
-  justify-center
-  text-gray-900
-  rounded-[100px]
-  px-4
-  items-center
-  font-normal
-    border-solid
-    border
-    border-gray-500
-    hover:bg-gray-200
-      font-sans 
-  active:bg-gray-300;
-}
-.btn-ghost {
-  @apply bg-none
-   flex
-  justify-center
-   text-gray-600
-    rounded-[100px]
-      items-center
-        font-sans 
-  font-normal
-      px-4
- 
-    hover:bg-gray-200 text-gray-800
-    active:bg-green-200 
-    active:text-green-600
-    active:font-semibold;
-}
 
-/* 인풋 */
+@theme inline {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
-.input-daflult {
-  @apply bg-none
-  h-10
-  w-full
-  border
-  outline-none
-  border-gray-500
-  rounded-[100px]
-  px-4
-  text-gray-900
-  text-[14px]
-    font-normal
-  font-sans
-  focus:border-green-400;
-}
-
-.input-disabled {
-  @apply bg-gray-200
-  rounded-[100px]
-  px-4
-  font-sans
-  text-[14px]
-    font-normal
-  h-10
-  w-full;
-}
-.input-withtime {
-  @apply bg-none
-  h-10
-  border
-  outline-none
-  pl-4
-  pr-12
-  border-gray-500
-  rounded-[100px]
-  text-gray-900
-  text-[14px]
-  font-sans
-  w-full
-    font-normal
-  focus:border-green-400;
-}
-
-/* 라벨 */
-.label {
-  @apply text-[12px]
-  text-gray-500
-    font-normal;
-}
-
-/* 에러 메세지 */
-.errorMsg {
-  @apply text-system-red
-  text-[12px]
-    font-normal;
-}
-
-/* 타이머 */
-.timer {
-  @apply absolute
-    right-3
-    top-1/2
-    -translate-y-1/2 text-gray-500 text-[12px];
+  --color-electric-violet-50: #f3f1ff;
+  --color-electric-violet-100: #ebe5ff;
+  --color-electric-violet-200: #d9ceff;
+  --color-electric-violet-300: #bda6ff;
+  --color-electric-violet-400: #9f74ff;
+  --color-electric-violet-500: #843dff;
+  --color-electric-violet-600: #7816ff;
+  --color-electric-violet-700: #6b04fd;
+  --color-electric-violet-800: #5903d4;
+  --color-electric-violet-900: #4b05ad;
+  --color-electric-violet-950: #2c0076;
 }
