@@ -1,21 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 @import "tailwindcss";
 
-
 @theme inline {
-  --font-sans: "Pretendard Variable", Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
-  --color-electric-violet-50: #f3f1ff;
-  --color-electric-violet-100: #ebe5ff;
-  --color-electric-violet-200: #d9ceff;
-  --color-electric-violet-300: #bda6ff;
-  --color-electric-violet-400: #9f74ff;
-  --color-electric-violet-500: #843dff;
-  --color-electric-violet-600: #7816ff;
-  --color-electric-violet-700: #6b04fd;
-  --color-electric-violet-800: #5903d4;
-  --color-electric-violet-900: #4b05ad;
-  --color-electric-violet-950: #2c0076;
+/* === Color === */
+  --color-green-100: #ECF9F2;
+  --color-green-200: #E3F6EB;
+  --color-green-300: #C5ECD6;
+  --color-green-400: #43C17A;
+  --color-green-500: #3CAE6E;
+  --color-green-600: #369A62;
+  --color-green-700: #32915C;
+  --color-green-800: #287449;
+  --color-green-900: #1E5737;
+
+  --color-gray-100: #FCFCFC;
+  --color-gray-200: #EFEFEF;
+  --color-gray-300: #DFDFDF;
+  --color-gray-400: #B7B7B7;
+  --color-gray-500: #949494;
+  --color-gray-600: #777777;
+  --color-gray-700: #555555;
+  --color-gray-800: #2A2A2A;
+  --color-gray-900: #111111;
+
+  --color-red: #FFF;
+
+/* === Font === */
+  --font-notosans: "Noto Sans KR"; 
+}
+
+@layer base {
+  html {
+    font-family: var(--font-notosans);
+  }
+}
+
+/* === Typography === */
+
+/* Heading */
+@utility text-heading1 {
+  font-size: 3rem;
+  line-height: 4.09rem;
+}
+
+@utility text-heading2 {
+  font-size: 3rem;
+  line-height: 3.41rem;
+}
+
+@utility text-heading3 {
+  font-size: 2rem;
+  line-height: 2.73rem;
+}
+
+
+/* Title */
+@utility text-title1 {
+  font-size: 1.8rem;
+  line-height: 2.38rem;
+
+}
+
+@utility text-title2 {
+  font-size: 1.5rem;
+  line-height: 2.05rem;
+}
+
+@utility text-title3 {
+  font-size: 1.3rem;
+  line-height: 1.70rem;
+}
+
+
+/* Body */
+@utility text-body1 {
+  font-size: 1.10rem;
+  line-height: 1.53rem;
+
+}
+
+@utility text-body2 {
+  font-size: 1rem;
+  line-height: 1.36rem;
+
+}
+
+@utility text-body3 {
+  font-size: 0.88rem;
+  line-height: 1.19rem;
+
+}
+
+@utility text-body4 {
+  font-size: 0.90rem;
+  line-height: 1.02rem;
+
+}
+
+@utility text-body5 {
+  font-size: 0.60rem;
+  line-height: 0.85rem;
+
 }
