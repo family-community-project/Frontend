@@ -1,3 +1,4 @@
+import Chip from "./components/chip";
 import { DropDown } from "./components/dropdown";
 
 export default function Home() {
@@ -12,8 +13,10 @@ export default function Home() {
       <br></br>
       <br></br>
       <br></br>
-
+      <Chip label="예시 라벨" />
+      <br></br>
       <DropDown name="" option={["옵션1", "옵션2"]} placeholder={"작성하기"} />
+      <br></br>
       <br />
       <br />
       <br />
