@@ -1,8 +1,26 @@
-import { Button } from "./components/button";
+import Chip from "./components/chip";
+import { DropDown } from "./components/dropdown";
+
 export default function Home() {
   return (
-    <div>
-      <Button text="작성하기" size="M" type="outline" />
+    <div className="w-[120px] m-auto">
+      <br></br>
+      <br></br>
+      <br></br>
+      <DropDown name="" option={["옵션1", "옵션2"]} placeholder={"작성하기"} />
+      <br />
+      <DropDown name="" option={["옵션1", "옵션2"]} placeholder={"작성하기"} />
+      <br></br>
+      <br></br>
+      <br></br>
+      <Chip label="예시 라벨" />
+      <br></br>
+      <DropDown name="" option={["옵션1", "옵션2"]} placeholder={"작성하기"} />
+      <br></br>
+      <br />
+      <br />
+      <br />
+      <DropDown name="" option={["옵션1", "옵션2"]} placeholder={"작성하기"} />
     </div>
   );
 }
