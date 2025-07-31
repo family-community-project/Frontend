@@ -1,122 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-
-/* === Color === */
-  --color-green-100: #ECF9F2;
-  --color-green-200: #E3F6EB;
-  --color-green-300: #C5ECD6;
-  --color-green-400: #43C17A;
-  --color-green-500: #3CAE6E;
-  --color-green-600: #369A62;
-  --color-green-700: #32915C;
-  --color-green-800: #287449;
-  --color-green-900: #1E5737;
-
-  --color-gray-100: #FCFCFC;
-  --color-gray-200: #EFEFEF;
-  --color-gray-300: #DFDFDF;
-  --color-gray-400: #B7B7B7;
-  --color-gray-500: #949494;
-  --color-gray-600: #777777;
-  --color-gray-700: #555555;
-  --color-gray-800: #2A2A2A;
-  --color-gray-900: #111111;
-
-  --color-red: #FFF;
-
-/* === Font === */
-  --font-notosans: "Noto Sans KR"; 
-}
-
-@layer base {
-  html {
-    font-family: var(--font-notosans);
-  }
-}
-
-/* === Typography === */
-
-/* Heading */
-@utility text-heading1 {
-  font-size: 3rem;
-  line-height: 4.09rem;
-}
-
-@utility text-heading2 {
-  font-size: 3rem;
-  line-height: 3.41rem;
-}
-
-@utility text-heading3 {
-  font-size: 2rem;
-  line-height: 2.73rem;
-}
-
-
-/* Title */
-@utility text-title1 {
-  font-size: 1.8rem;
-  line-height: 2.38rem;
-
-}
-
-@utility text-title2 {
-  font-size: 1.5rem;
-  line-height: 2.05rem;
-}
-
-@utility text-title3 {
-  font-size: 1.3rem;
-  line-height: 1.70rem;
-}
-
-
-/* Body */
-@utility text-body1 {
-  font-size: 1.10rem;
-  line-height: 1.53rem;
-
-}
-
-@utility text-body2 {
-  font-size: 1rem;
-  line-height: 1.36rem;
-
-}
-
-@utility text-body3 {
-  font-size: 0.88rem;
-  line-height: 1.19rem;
-
-}
-
-@utility text-body4 {
-  font-size: 0.90rem;
-  line-height: 1.02rem;
-
-}
-
-@utility text-body5 {
-  font-size: 0.60rem;
-  line-height: 0.85rem;
-
-}
-
-/* 드롭다운 */
-.option {
-  @apply bg-none flex
-  flex-col
+.btn-default {
+  @apply bg-green-500 
+  flex
   justify-center
-  items-center
-  text-gray-500
-  text-[12px]/[12px]
+  text-white
   rounded-[100px]
-  h-[32px]
-  w-full
-  px-[16px]
-  hover:bg-green-100
-  hover:text-green-500
-  /* pr-[12px] */;
+  px-4
+  items-center
+  font-normal
+  font-sans 
+  hover:bg-green-600
+  active:bg-green-700;
+}
+.btn-outline {
+  @apply bg-none
+    flex
+  justify-center
+  text-gray-900
+  rounded-[100px]
+  px-4
+  items-center
+  font-normal
+    border-solid
+    border
+    border-gray-500
+    hover:bg-gray-200
+      font-sans 
+  active:bg-gray-300;
+}
+.btn-ghost {
+  @apply bg-none
+   flex
+  justify-center
+   text-gray-600
+    rounded-[100px]
+      items-center
+        font-sans 
+  font-normal
+      px-4
+ 
+    hover:bg-gray-200 text-gray-800
+    active:bg-green-200 
+    active:text-green-600
+    active:font-semibold;
 }
